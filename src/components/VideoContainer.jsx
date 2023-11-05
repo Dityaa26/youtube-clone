@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import { YOUTUBE_VIDEOS_API } from '../utils/constants'
-import VideoCard from './VideoCard'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from "react";
+import { YOUTUBE_VIDEOS_API } from "../utils/constants";
+import VideoCard from "./VideoCard";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
-  const [videos, setVideos] = useState([])
-      const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  const [videos, setVideos] = useState([]);
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  useEffect(()=> {
+  useEffect(() => {
     const getVideos = async () => {
       const res = await fetch(YOUTUBE_VIDEOS_API);
       const data = await res.json();
       // console.log(data?.items[0])
-      setVideos(data.items)
-    }
-    getVideos()
-  }, [])
+      setVideos(data.items);
+    };
+    getVideos();
+  }, []);
 
   return (
     <div
@@ -24,10 +25,10 @@ const VideoContainer = () => {
       }`}
     >
       {videos?.map((video) => (
-        <VideoCard key={video.id} info={video} />
+            <VideoCard key={video.id} info={video} id={video.id} />
       ))}
     </div>
   );
-}
+};
 
-export default VideoContainer
+export default VideoContainer;

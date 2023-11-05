@@ -1,15 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const VideoCard = ({ info }) => {
+const VideoCard = ({ info ,id }) => {
+  console.log(id)
 
   if(!info) return;
+  if(!id) return
   
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
   return (
-    <div className=" p-2 w-2/6 flex flex-col my-4">
+    <Link to={"/watch?v=" + id} className=" p-2 w-2/6 m-0 flex flex-col rounded-xl hover:bg-slate-200 hover:shadow shadow-black my-4">
       <img
-        className="rounded-xl mb-3 hover:rounded-none"
+        className="rounded-xl mb-3 "
         src={thumbnails.medium.url}
         alt="thumbnail"
       />
@@ -34,7 +37,7 @@ const VideoCard = ({ info }) => {
           </ul>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
