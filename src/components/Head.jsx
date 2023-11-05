@@ -23,6 +23,7 @@ const Head = () => {
           alt="Youtube"
           className="h-[60px]"
         />
+        <p className='text-xl font-bold opacity-60'>Clone</p>
       </div>
       <div className="flex items-center ">
         <input

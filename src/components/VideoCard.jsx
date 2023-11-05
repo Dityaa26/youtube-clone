@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { closeMenu } from "../utils/appSlice";
+import { useDispatch } from "react-redux";
 
 const VideoCard = ({ info ,id }) => {
-  console.log(id)
+  const dispatch = useDispatch()
 
   if(!info) return;
   if(!id) return
@@ -10,7 +12,7 @@ const VideoCard = ({ info ,id }) => {
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
   return (
-    <Link to={"/watch?v=" + id} className=" p-2 w-2/6 m-0 flex flex-col rounded-xl hover:bg-slate-200 hover:shadow shadow-black my-4">
+    <Link onClick={() => dispatch(closeMenu())} to={"/watch?v=" + id} className=" p-2 w-2/6 m-0 flex flex-col rounded-xl hover:bg-slate-200 hover:shadow shadow-black my-4">
       <img
         className="rounded-xl mb-3 "
         src={thumbnails.medium.url}

@@ -6,31 +6,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {Body, WatchPage} from "./components/components.js"
 import MainContainer from './components/MainContainer.jsx'
 
-const appRouter = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      {
-        path: '/',
-        element: <Body />, 
-        children: [
-          {
-            path: 'watch',
-            element: <WatchPage />
-          },
-          {
-            path: '/',
-            element: <MainContainer />
-          },
-        ]
-      },
-    ]
-  }
-])
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={appRouter} />
+    <App />
   </React.StrictMode>,
 )
