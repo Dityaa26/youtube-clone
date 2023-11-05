@@ -10,7 +10,7 @@ const Head = () => {
     }
 
   return (
-    <div className="border m-0 flex justify-between px-4">
+    <div className="mb-0 top fixed z-10 bg-white w-full flex justify-between px-4">
       <div className="flex items-center">
         <img
         onClick={() => toggleMenuHandler()}
