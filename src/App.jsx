@@ -1,9 +1,25 @@
+import Body from "./components/Body";
+import Head from "./components/Head";
+
 function App() {
   
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline text-rose-600">Hello world!</h1>
+      <Head />
+      <Body />
+      {
+        /* 
+          Head
+          Body
+            Sidebar
+              MenuItems
+            MainContainer
+              btnList
+              VideoContainer
+                VideoCards
+        */
+      }
     </>
   );
 }
