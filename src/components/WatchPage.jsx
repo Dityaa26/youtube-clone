@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router-dom';
 import CommentsContainer from './CommentsContainer';
+import LiveChat from './LiveChat';
 
 const WatchPage = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -33,7 +34,7 @@ const WatchPage = () => {
           </div>
         </div>
         <div>
-          <h1>Video Suggestion</h1>
+          <LiveChat />
         </div>
       </div>
     </div>
