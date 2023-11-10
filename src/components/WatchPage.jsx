@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router-dom';
+import CommentsContainer from './CommentsContainer';
 
 const WatchPage = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -16,7 +17,7 @@ const WatchPage = () => {
       }`}
     >
       <div className="flex ml-8">
-        <div className="w-8/12">
+        <div className="w-8/12 ">
           <iframe
             className="rounded-xl"
             width="841"
@@ -27,6 +28,9 @@ const WatchPage = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
+          <div>
+            <CommentsContainer />
+          </div>
         </div>
         <div>
           <h1>Video Suggestion</h1>

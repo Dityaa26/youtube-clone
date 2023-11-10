@@ -18,12 +18,15 @@ const VideoContainer = () => {
     getVideos();
   }, []);
 
+  // if(!videos) return;
+
   return (
     <div
       className={`flex flex-wrap top-12 absolute right-0 ${
         isMenuOpen ? "min-w-[calc(100%-16.666667%)]" : "w-[100%]"
       }`}
     >
+      {/* <AdVideoCard info={videos[0]} /> */}
       {videos?.map((video) => (
             <VideoCard key={video.id} info={video} id={video.id} />
       ))}
